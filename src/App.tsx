@@ -13,7 +13,7 @@ function App() {
   const [name, setName] = useState<string>("");
 
   const handle = () => {
-    console.log("teste");
+    console.log(`Current name ${name}`);
   };
 
   return (
@@ -24,6 +24,7 @@ function App() {
           <h1>Loja de informática</h1>
           <DefaultForm title="Registrar produtos" handleSubmit={handle}>
             <TextField label="Nome" value={name} changeValue={setName} />
+            <button type="submit">Criar</button>
           </DefaultForm>
         </section>
       </main>

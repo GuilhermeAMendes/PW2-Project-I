@@ -1,5 +1,5 @@
 // External library
-import React from "react";
+import React, { type FormEvent } from "react";
 
 // Types
 import type { FormProps } from "./types";
@@ -12,8 +12,15 @@ export const DefaultForm: React.FC<FormProps> = ({
   title,
   handleSubmit,
 }) => {
+  
+  
+  const submit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    handleSubmit();
+  };
+
   return (
-    <form onSubmit={handleSubmit} className={styles.formContainer}>
+    <form onSubmit={submit} className={styles.formContainer}>
       <h2 className={styles.formTitle}>{title}</h2>
       {children}
     </form>

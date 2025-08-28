@@ -12,6 +12,7 @@
 
 :root {
   --white-100: #ffffff;
+  --white-200: #fafafa;
   --white-300: #d9d9d9;
   --white-500: #deebf7;
   --gray-100: #a8acb9;
@@ -41,6 +42,7 @@ code {
 
 body {
   display: flex;
+  background-color: var(--white-200);
   flex-direction: column;
   align-items: center;
   height: 100dvh;

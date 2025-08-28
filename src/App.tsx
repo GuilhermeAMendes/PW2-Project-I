@@ -1,12 +1,18 @@
-// Styles
-import "./App.css";
-
 // Components
+import Banner from "@components/commons/structure/Banner";
+
+// Styles
+import styles from "./styles.module.css";
 
 function App() {
   return (
     <>
-      Hello World!
+      <Banner />
+      <main className={styles.main}>
+        <div>teste</div>
+        <div>teste</div>
+        <div>teste</div>
+      </main>
     </>
   );
 }

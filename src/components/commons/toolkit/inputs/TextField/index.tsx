@@ -9,9 +9,15 @@ export const TextField = ({ label, value, changeValue }: TextFieldProps) => {
     changeValue(newValue);
   };
 
+  const hasContent = value.trim() !== "";
+
+  const labelClass = `${styles.textFieldLabel} ${
+    hasContent ? styles.hasContent : ""
+  }`;
+
   return (
     <div className={styles.textField}>
-      <label className={styles.textFieldLabel}>{label}</label>
+      <label className={labelClass}>{label}</label>
       <input
         className={styles.textFieldInput}
         type="text"

@@ -57,7 +57,18 @@ export default function Products() {
     }));
   };
 
+  const hasInvalidField = () => {
+    return Object.values(product).some(
+      (prop) =>
+        prop === "" ||
+        prop === null ||
+        prop === undefined ||
+        (typeof prop === "number" && prop < 0)
+    );
+  };
+
   const handleFormSubmit = () => {
+    if (hasInvalidField()) return;
     setProducts((prev) => [...prev, product]);
     setProduct(defaultProduct);
   };

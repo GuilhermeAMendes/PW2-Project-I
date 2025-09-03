@@ -7,5 +7,6 @@ export interface SelectFieldProps {
   label: string;
   value: string;
   options: Options;
+  placeholder?: string;
   changeValue: (newValue: string) => void;
 }

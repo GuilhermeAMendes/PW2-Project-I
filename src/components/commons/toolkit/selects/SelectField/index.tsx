@@ -8,6 +8,7 @@ export const SelectField = ({
   label,
   value,
   options,
+  placeholder,
   changeValue,
 }: SelectFieldProps) => {
   const handleChangeSelectValue = (newValue: string) => {
@@ -18,14 +19,26 @@ export const SelectField = ({
     changeValue(newValue);
   };
 
+  const hasContent = value.trim() !== "";
+
+  const labelClass = `${styles.selectFieldLabel} ${
+    hasContent ? styles.hasContent : ""
+  }`;
+
   return (
     <div className={styles.selectField}>
-      <label className={styles.selectFieldLabel}>{label}</label>
+      <label className={labelClass}>{label}</label>
       <select
+        required
         value={value}
         onChange={(event) => handleChangeSelectValue(event.target.value)}
-        className={styles.selectFieldInput}
+        className={`${styles.selectFieldInput} ${
+          !value ? styles.isPlaceholder : ""
+        }`}
       >
+        <option value="" disabled hidden>
+          {placeholder ? placeholder : "Selecione uma opção"}
+        </option>
         {options.map((element, index) => (
           <option key={index} value={element.value}>
             {element.label}

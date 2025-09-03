@@ -7,10 +7,11 @@ import type { Product } from "./types";
 // Components
 import { DefaultForm } from "@components/commons/toolkit/forms/DefaultForm";
 import TextField from "@components/commons/toolkit/inputs/TextField";
+import NumberField from "@components/commons/toolkit/inputs/NumberField";
+import { SelectField } from "@components/commons/toolkit/selects/SelectField";
 
 // Styles
 import styles from "./styles.module.css";
-import NumberField from "@components/commons/toolkit/inputs/NumberField";
 
 // Constants
 const defaultProduct: Product = {
@@ -39,18 +40,43 @@ export default function Products() {
     setProduct(defaultProduct);
   };
 
+  const stateOptions = [
+    { label: "Novo", value: "New" },
+    { label: "Usado", value: "Used" },
+  ];
+
+  const sectionOptions = [
+    { label: "Computadores", value: "Computers" },
+    { label: "Acessórios", value: "Accessories" },
+    { label: "Impressoras", value: "Printers" },
+    { label: "Jogos", value: "Games" },
+    { label: "Gadgets", value: "Gadgets" },
+  ];
+
+  const brandOptions = [
+    { label: "HP", value: "HP" },
+    { label: "Dell", value: "Dell" },
+    { label: "Positivo", value: "Positivo" },
+    { label: "Asus", value: "Asus" },
+    { label: "Genérico", value: "Generic" },
+  ];
+
   return (
     <section className={styles.section}>
       <h1>Loja de informática</h1>
       <DefaultForm title="Registrar produto" handleSubmit={handleFormSubmit}>
-        <TextField
+        <SelectField
           label="Seção"
-          value={section as string}
+          value={section}
+          options={sectionOptions}
+          placeholder="Selecione uma seção"
           changeValue={(value) => handleChange("section", value)}
         />
-        <TextField
+        <SelectField
           label="Marca"
-          value={brand as string}
+          value={brand}
+          options={brandOptions}
+          placeholder="Selecione uma marca"
           changeValue={(value) => handleChange("brand", value)}
         />
         <TextField
@@ -63,9 +89,10 @@ export default function Products() {
           value={price}
           changeValue={(value) => handleChange("price", value)}
         />
-        <TextField
+        <SelectField
           label="Uso"
-          value={state as string}
+          value={state}
+          options={stateOptions}
           changeValue={(value) => handleChange("state", value)}
         />
         <button type="submit">Criar</button>

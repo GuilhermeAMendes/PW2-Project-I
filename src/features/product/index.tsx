@@ -9,6 +9,7 @@ import { DefaultForm } from "@components/commons/toolkit/forms/DefaultForm";
 import TextField from "@components/commons/toolkit/inputs/TextField";
 import NumberField from "@components/commons/toolkit/inputs/NumberField";
 import { SelectField } from "@components/commons/toolkit/selects/SelectField";
+import RadioGroup from "@components/commons/toolkit/radios/RadioGroup";
 
 // Styles
 import styles from "./styles.module.css";
@@ -21,6 +22,27 @@ const defaultProduct: Product = {
   section: "",
   state: "",
 };
+
+const stateOptions = [
+  { label: "Novo", value: "New" },
+  { label: "Usado", value: "Used" },
+];
+
+const sectionOptions = [
+  { label: "Computadores", value: "Computers" },
+  { label: "Acessórios", value: "Accessories" },
+  { label: "Impressoras", value: "Printers" },
+  { label: "Jogos", value: "Games" },
+  { label: "Gadgets", value: "Gadgets" },
+];
+
+const brandOptions = [
+  { label: "HP", value: "HP" },
+  { label: "Dell", value: "Dell" },
+  { label: "Positivo", value: "Positivo" },
+  { label: "Asus", value: "Asus" },
+  { label: "Genérico", value: "Generic" },
+];
 
 export default function Products() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -39,27 +61,6 @@ export default function Products() {
     setProducts((prev) => [...prev, product]);
     setProduct(defaultProduct);
   };
-
-  const stateOptions = [
-    { label: "Novo", value: "New" },
-    { label: "Usado", value: "Used" },
-  ];
-
-  const sectionOptions = [
-    { label: "Computadores", value: "Computers" },
-    { label: "Acessórios", value: "Accessories" },
-    { label: "Impressoras", value: "Printers" },
-    { label: "Jogos", value: "Games" },
-    { label: "Gadgets", value: "Gadgets" },
-  ];
-
-  const brandOptions = [
-    { label: "HP", value: "HP" },
-    { label: "Dell", value: "Dell" },
-    { label: "Positivo", value: "Positivo" },
-    { label: "Asus", value: "Asus" },
-    { label: "Genérico", value: "Generic" },
-  ];
 
   return (
     <section className={styles.section}>
@@ -89,7 +90,7 @@ export default function Products() {
           value={price}
           changeValue={(value) => handleChange("price", value)}
         />
-        <SelectField
+        <RadioGroup
           label="Uso"
           value={state}
           options={stateOptions}

@@ -1,0 +1,38 @@
+.selectField {
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.selectFieldLabel {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.35rem;
+  color: var(--gray-100);
+  transition: color 0.15s ease-in-out;
+}
+
+.selectField:focus-within .selectFieldLabel {
+  color: var(--black-1000);
+}
+
+.selectFieldInput {
+  width: 100%;
+  height: 2.5rem;
+  background-color: var(--white-100);
+  border: 2px solid var(--gray-100);
+  border-radius: 0.2rem;
+  font-size: 1rem;
+  padding: 0.25rem 2rem 0.25rem 0.5rem;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg width='16' height='16' fill='gray' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 6l4 4 4-4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 1rem;
+}
+
+.selectFieldInput:focus {
+  outline: none;
+  border-color: var(--black-1000);
+}

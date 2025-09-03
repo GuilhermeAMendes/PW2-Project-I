@@ -10,6 +10,7 @@ import TextField from "@components/commons/toolkit/inputs/TextField";
 
 // Styles
 import styles from "./styles.module.css";
+import NumberField from "@components/commons/toolkit/inputs/NumberField";
 
 // Constants
 const defaultProduct: Product = {
@@ -57,10 +58,10 @@ export default function Products() {
           value={name}
           changeValue={(value) => handleChange("name", value)}
         />
-        <TextField
+        <NumberField
           label="Preço"
-          value={String(price)}
-          changeValue={(value) => handleChange("price", Number(value))}
+          value={price}
+          changeValue={(value) => handleChange("price", value)}
         />
         <TextField
           label="Uso"

@@ -1,0 +1,34 @@
+.numberField {
+  margin-bottom: 0.5rem;
+}
+
+.numberFieldLabel {
+  position: relative;
+  top: 1.85rem;
+  left: 0.35rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.15s ease-in-out;
+  color: var(--gray-100);
+}
+
+.numberField:focus-within .numberFieldLabel {
+  top: -0.5rem;
+  color: var(--black-1000);
+}
+
+.hasContent {
+  top: -0.5rem;
+  color: var(--black-1000);
+}
+
+.numberFieldInput {
+  width: 100%;
+  height: 2.5rem;
+  background-color: var(--white-100);
+  border: 2px solid var(--gray-100);
+  border-radius: 0.2rem;
+  font-size: 1rem;
+  padding: 0.25rem;
+}

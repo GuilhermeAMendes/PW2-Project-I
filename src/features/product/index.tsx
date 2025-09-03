@@ -10,10 +10,11 @@ import TextField from "@components/commons/toolkit/inputs/TextField";
 import NumberField from "@components/commons/toolkit/inputs/NumberField";
 import SelectField from "@components/commons/toolkit/selects/SelectField";
 import RadioGroup from "@components/commons/toolkit/radios/RadioGroup";
+import SubmitButton from "@components/commons/toolkit/buttons/SubmitButton";
+import ListProduct from "./components/list/ListProduct";
 
 // Styles
 import styles from "./styles.module.css";
-import SubmitButton from "@components/commons/toolkit/buttons/SubmitButton";
 
 // Constants
 const defaultProduct: Product = {
@@ -110,21 +111,7 @@ export default function Products() {
         />
         <SubmitButton children="Criar" />
       </DefaultForm>
-      <div>
-        <h2>Lista de Produtos</h2>
-        {products.length > 0 ? (
-          <ul>
-            {products.map((prod, index) => (
-              <li key={index}>
-                {prod.section} - {prod.brand} - {prod.name} - {prod.price} R$ -
-                {prod.state}
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>Nenhum produto registrado ainda.</p>
-        )}
-      </div>
+      <ListProduct content={products} />
     </section>
   );
 }

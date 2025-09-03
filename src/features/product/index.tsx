@@ -13,6 +13,7 @@ import RadioGroup from "@components/commons/toolkit/radios/RadioGroup";
 
 // Styles
 import styles from "./styles.module.css";
+import SubmitButton from "@components/commons/toolkit/buttons/SubmitButton";
 
 // Constants
 const defaultProduct: Product = {
@@ -107,7 +108,7 @@ export default function Products() {
           options={stateOptions}
           changeValue={(value) => handleChange("state", value)}
         />
-        <button type="submit">Criar</button>
+        <SubmitButton children="Criar" />
       </DefaultForm>
       <div>
         <h2>Lista de Produtos</h2>

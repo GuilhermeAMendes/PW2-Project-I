@@ -20,6 +20,7 @@ export const TextField = ({ label, value, changeValue }: TextFieldProps) => {
       <label className={labelClass}>{label}</label>
       <input
         className={styles.textFieldInput}
+        required
         type="text"
         onChange={(event) => handleChangeTextValue(event.target.value)}
         value={value}

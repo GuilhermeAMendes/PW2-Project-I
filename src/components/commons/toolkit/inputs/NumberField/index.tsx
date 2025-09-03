@@ -27,6 +27,7 @@ export const NumberField = ({
         className={styles.numberFieldInput}
         type="number"
         min={0}
+        required
         onChange={(event) => handleChangeTextValue(Number(event.target.value))}
         value={value}
       />

@@ -12,8 +12,6 @@ export const DefaultForm: React.FC<FormProps> = ({
   title,
   handleSubmit,
 }) => {
-  
-  
   const submit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     handleSubmit();
@@ -26,3 +24,5 @@ export const DefaultForm: React.FC<FormProps> = ({
     </form>
   );
 };
+
+export default DefaultForm;

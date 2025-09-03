@@ -5,10 +5,10 @@ import { useState } from "react";
 import type { Product } from "./types";
 
 // Components
-import { DefaultForm } from "@components/commons/toolkit/forms/DefaultForm";
+import DefaultForm from "@components/commons/toolkit/forms/DefaultForm";
 import TextField from "@components/commons/toolkit/inputs/TextField";
 import NumberField from "@components/commons/toolkit/inputs/NumberField";
-import { SelectField } from "@components/commons/toolkit/selects/SelectField";
+import SelectField from "@components/commons/toolkit/selects/SelectField";
 import RadioGroup from "@components/commons/toolkit/radios/RadioGroup";
 
 // Styles

@@ -48,3 +48,5 @@ export const SelectField = ({
     </div>
   );
 };
+
+export default SelectField;
